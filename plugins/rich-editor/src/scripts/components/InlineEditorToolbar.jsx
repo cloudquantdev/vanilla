@@ -12,7 +12,7 @@ import Keyboard from "quill/modules/keyboard";
 import LinkBlot from "quill/formats/link";
 import FloatingToolbar from "./FloatingToolbar";
 import EditorToolbar from "./EditorToolbar";
-import { t } from "@core/utility";
+import { t, logWarning } from "@core/utility";
 import * as quillUtilities from "../quill-utilities";
 
 export default class InlineEditorToolbar extends React.Component {
@@ -77,21 +77,20 @@ export default class InlineEditorToolbar extends React.Component {
         this.quill.on(Emitter.events.EDITOR_CHANGE, this.handleEditorChange);
 
         // Add a key binding for the link popup.
-        this.quill.options.modules.keyboard.bindings.link = {
-            key: "k",
-            metaKey: true,
-            handler: () => {
-                const range = this.quill.getSelection();
-                if (range.length) {
-                    if (quillUtilities.rangeContainsBlot(this.quill, range, LinkBlot)) {
-                        quillUtilities.disableAllBlotsInRange(this.quill, range, LinkBlot);
-                        this.clearLinkInput();
-                    } else {
-                        this.focusLinkInput();
-                    }
-                }
-            },
-        };
+        if (
+            this.quill.options &&
+            this.quill.options.modules &&
+            this.quill.options.modules.keyboard
+        ) {
+            this.quill.options.modules.keyboard.bindings.link = {
+                key: "k",
+                metaKey: true,
+                handler: this.linkKeyboardShortcutHandler,
+            };
+        } else {
+            logWarning("<InlineEditorToolbar />'s quill instance does not have a keyboard module.");
+        }
+
     }
 
     /**
@@ -100,6 +99,21 @@ export default class InlineEditorToolbar extends React.Component {
     componentWillUnmount() {
         this.quill.off(Quill.events.EDITOR_CHANGE, this.handleEditorChange);
     }
+
+    /**
+     * Link keyboard shortcut handler.
+     */
+    linkKeyboardShortcutHandler = () => {
+        const range = this.quill.getSelection();
+        if (range.length) {
+            if (quillUtilities.rangeContainsBlot(this.quill, range, LinkBlot)) {
+                quillUtilities.disableAllBlotsInRange(this.quill, range, LinkBlot);
+                this.clearLinkInput();
+            } else {
+                this.focusLinkInput();
+            }
+        }
+    };
 
     /**
      * Handle changes from the editor.
@@ -211,10 +225,10 @@ export default class InlineEditorToolbar extends React.Component {
      */
     render() {
         return <div>
-            <FloatingToolbar quill={this.quill} forceVisibility={this.state.showLink ? "hidden" : "ignore"}>
+            <FloatingToolbar name="Formatting" quill={this.quill} forceVisibility={this.state.showLink ? "hidden" : "ignore"}>
                 <EditorToolbar quill={this.quill} menuItems={this.menuItems}/>
             </FloatingToolbar>
-            <FloatingToolbar quill={this.quill} forceVisibility={this.state.showLink ? "visible" : "hidden"}>
+            <FloatingToolbar name="Link" quill={this.quill} forceVisibility={this.state.showLink ? "visible" : "hidden"}>
                 <div className="richEditor-menu FlyoutMenu insertLink" role="dialog" aria-label={t("Insert Url")}>
                     <input
                         value={this.state.value}

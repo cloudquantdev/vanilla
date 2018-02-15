@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FloatingToolbar /> matches snapshot 1`] = `
+<div
+  className="richEditor-inlineMenu "
+  style={
+    Object {
+      "position": "absolute",
+      "visibility": "hidden",
+    }
+  }
+>
+  <div>
+    Hello World
+  </div>
+  <div
+    className="richEditor-nubPosition"
+    style={Object {}}
+  >
+    <div
+      className="richEditor-nub"
+    />
+  </div>
+</div>
+`;

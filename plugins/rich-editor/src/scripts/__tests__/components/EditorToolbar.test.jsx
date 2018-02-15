@@ -2,7 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import EditorMenuItem from "../../components/EditorMenuItem";
 import EditorToolbar from "../../components/EditorToolbar";
-import Quill from "quill/core";
+import Quill from "../../Quill";
 
 jest.mock('quill/core');
 
@@ -51,22 +51,29 @@ test("can receive a custom formatter for the menu item click handler.", () => {
 });
 
 describe("update", () => {
-    let toolbar;
+    const quill = new Quill();
+    const mockGetFormat = jest.fn();
+    mockGetFormat
+        .mockReturnValueOnce({bold: true})
+        .mockReturnValueOnce({});
+    quill.getFormat = mockGetFormat;
+    const menuItems = {
+        bold: {
+            active: false,
+        },
+    };
 
-    beforeAll(() => {
-        const quill = new Quill();
-        const menuItems = {
-            bold: {
-                active: false,
-            },
-        };
+    const toolbar = shallow(
+        <EditorToolbar quill={quill} menuItems={menuItems}/>
+    );
 
-        toolbar = shallow(
-            <EditorToolbar quill={quill} menuItems={menuItems}/>
-        );
-    });
+    it("updates boolean type", () => {
 
-    it("updates boolean type ", () => {
-
+        /** @var {EditorToolbar} */
+        const instance = toolbar.instance();
+        instance.update({});
+        expect(toolbar.state("bold").active).toBe(true);
+        instance.update({});
+        expect(toolbar.state("bold").active).toBe(false);
     });
 });

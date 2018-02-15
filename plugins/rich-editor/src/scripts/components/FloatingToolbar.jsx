@@ -16,6 +16,7 @@ export default class FloatingToolbar extends React.Component {
         quill: PropTypes.instanceOf(Quill).isRequired,
         children: PropTypes.node.isRequired,
         forceVisibility: PropTypes.string.isRequired,
+        name: PropTypes.string,
     };
 
     /** @type {Quill} */
@@ -210,7 +211,11 @@ export default class FloatingToolbar extends React.Component {
         let nubStyles = {};
         let classes = "richEditor-inlineMenu ";
 
-        if (x && y && this.props.forceVisibility === "ignore" || this.props.forceVisibility === "visible") {
+        if (this.props.name) {
+            classes += `richEditor-inlineMenu--${this.props.name} `;
+        }
+
+        if (x && y && (this.props.forceVisibility === "ignore" || this.props.forceVisibility === "visible")) {
             toolbarStyles = {
                 position: "absolute",
                 top: y.toolbarPosition,

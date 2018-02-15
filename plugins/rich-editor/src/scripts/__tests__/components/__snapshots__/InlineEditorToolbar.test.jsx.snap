@@ -1,0 +1,309 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InlineEditorToolbar /> matches snapshot 1`] = `
+<div>
+  <FloatingToolbar
+    forceVisibility="ignore"
+    name="Formatting"
+    quill={
+      Quill {
+        "addContainer": [MockFunction],
+        "blur": [MockFunction],
+        "deleteText": [MockFunction],
+        "disable": [MockFunction],
+        "enable": [MockFunction],
+        "focus": [MockFunction],
+        "format": [MockFunction],
+        "formatLine": [MockFunction],
+        "formatText": [MockFunction],
+        "getBounds": [MockFunction],
+        "getContents": [MockFunction],
+        "getFormat": [MockFunction],
+        "getIndex": [MockFunction],
+        "getLeaf": [MockFunction],
+        "getLength": [MockFunction],
+        "getLine": [MockFunction],
+        "getLines": [MockFunction],
+        "getModule": [MockFunction],
+        "getSelection": [MockFunction],
+        "getText": [MockFunction],
+        "hasFocus": [MockFunction],
+        "insertEmbed": [MockFunction],
+        "insertText": [MockFunction],
+        "isEnabled": [MockFunction],
+        "off": [MockFunction],
+        "on": [MockFunction] {
+          "calls": Array [
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "scroll-optimize",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+          ],
+        },
+        "once": [MockFunction],
+        "options": Object {
+          "modules": Object {
+            "keyboard": Object {
+              "bindings": Object {
+                "link": Object {
+                  "handler": [Function],
+                  "key": "k",
+                  "metaKey": true,
+                },
+              },
+            },
+          },
+        },
+        "pasteHTML": [MockFunction],
+        "removeFormat": [MockFunction],
+        "scroll": Object {
+          "descendants": [MockFunction],
+        },
+        "scrollIntoView": [MockFunction],
+        "setContents": [MockFunction],
+        "setSelection": [MockFunction],
+        "setText": [MockFunction],
+        "update": [MockFunction],
+        "updateContents": [MockFunction],
+      }
+    }
+  >
+    <EditorToolbar
+      menuItems={
+        Object {
+          "bold": Object {
+            "active": false,
+          },
+          "code": Object {
+            "active": false,
+          },
+          "italic": Object {
+            "active": false,
+          },
+          "link": Object {
+            "active": false,
+            "formatter": [Function],
+            "value": "",
+          },
+          "strike": Object {
+            "active": false,
+          },
+        }
+      }
+      quill={
+        Quill {
+          "addContainer": [MockFunction],
+          "blur": [MockFunction],
+          "deleteText": [MockFunction],
+          "disable": [MockFunction],
+          "enable": [MockFunction],
+          "focus": [MockFunction],
+          "format": [MockFunction],
+          "formatLine": [MockFunction],
+          "formatText": [MockFunction],
+          "getBounds": [MockFunction],
+          "getContents": [MockFunction],
+          "getFormat": [MockFunction],
+          "getIndex": [MockFunction],
+          "getLeaf": [MockFunction],
+          "getLength": [MockFunction],
+          "getLine": [MockFunction],
+          "getLines": [MockFunction],
+          "getModule": [MockFunction],
+          "getSelection": [MockFunction],
+          "getText": [MockFunction],
+          "hasFocus": [MockFunction],
+          "insertEmbed": [MockFunction],
+          "insertText": [MockFunction],
+          "isEnabled": [MockFunction],
+          "off": [MockFunction],
+          "on": [MockFunction] {
+            "calls": Array [
+              Array [
+                "editor-change",
+                [Function],
+              ],
+              Array [
+                "scroll-optimize",
+                [Function],
+              ],
+              Array [
+                "editor-change",
+                [Function],
+              ],
+              Array [
+                "editor-change",
+                [Function],
+              ],
+              Array [
+                "editor-change",
+                [Function],
+              ],
+              Array [
+                "editor-change",
+                [Function],
+              ],
+            ],
+          },
+          "once": [MockFunction],
+          "options": Object {
+            "modules": Object {
+              "keyboard": Object {
+                "bindings": Object {
+                  "link": Object {
+                    "handler": [Function],
+                    "key": "k",
+                    "metaKey": true,
+                  },
+                },
+              },
+            },
+          },
+          "pasteHTML": [MockFunction],
+          "removeFormat": [MockFunction],
+          "scroll": Object {
+            "descendants": [MockFunction],
+          },
+          "scrollIntoView": [MockFunction],
+          "setContents": [MockFunction],
+          "setSelection": [MockFunction],
+          "setText": [MockFunction],
+          "update": [MockFunction],
+          "updateContents": [MockFunction],
+        }
+      }
+    />
+  </FloatingToolbar>
+  <FloatingToolbar
+    forceVisibility="hidden"
+    name="Link"
+    quill={
+      Quill {
+        "addContainer": [MockFunction],
+        "blur": [MockFunction],
+        "deleteText": [MockFunction],
+        "disable": [MockFunction],
+        "enable": [MockFunction],
+        "focus": [MockFunction],
+        "format": [MockFunction],
+        "formatLine": [MockFunction],
+        "formatText": [MockFunction],
+        "getBounds": [MockFunction],
+        "getContents": [MockFunction],
+        "getFormat": [MockFunction],
+        "getIndex": [MockFunction],
+        "getLeaf": [MockFunction],
+        "getLength": [MockFunction],
+        "getLine": [MockFunction],
+        "getLines": [MockFunction],
+        "getModule": [MockFunction],
+        "getSelection": [MockFunction],
+        "getText": [MockFunction],
+        "hasFocus": [MockFunction],
+        "insertEmbed": [MockFunction],
+        "insertText": [MockFunction],
+        "isEnabled": [MockFunction],
+        "off": [MockFunction],
+        "on": [MockFunction] {
+          "calls": Array [
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "scroll-optimize",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+            Array [
+              "editor-change",
+              [Function],
+            ],
+          ],
+        },
+        "once": [MockFunction],
+        "options": Object {
+          "modules": Object {
+            "keyboard": Object {
+              "bindings": Object {
+                "link": Object {
+                  "handler": [Function],
+                  "key": "k",
+                  "metaKey": true,
+                },
+              },
+            },
+          },
+        },
+        "pasteHTML": [MockFunction],
+        "removeFormat": [MockFunction],
+        "scroll": Object {
+          "descendants": [MockFunction],
+        },
+        "scrollIntoView": [MockFunction],
+        "setContents": [MockFunction],
+        "setSelection": [MockFunction],
+        "setText": [MockFunction],
+        "update": [MockFunction],
+        "updateContents": [MockFunction],
+      }
+    }
+  >
+    <div
+      aria-label="Insert Url"
+      className="richEditor-menu FlyoutMenu insertLink"
+      role="dialog"
+    >
+      <input
+        className="InputBox insertLink-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Paste or type a link…"
+        value=""
+      />
+      <a
+        aria-label="Close"
+        className="Close richEditor-close"
+        href="#"
+        onClick={[Function]}
+        role="button"
+      >
+        <span>
+          ×
+        </span>
+      </a>
+    </div>
+  </FloatingToolbar>
+</div>
+`;
